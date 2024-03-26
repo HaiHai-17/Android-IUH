@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00BCD4"
+        android:paddingLeft="70dp"
+        android:text="Đăng nhập hệ thống"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/txtUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:layout_below="@+id/txtTitle"
+        android:layout_marginRight="72dp"
+        android:text="User: "
+        android:padding="10dp"
+        />
+
+    <TextView
+        android:id="@+id/txtPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password: "
+        android:textSize="30sp"
+        android:layout_below="@+id/txtUser"
+        android:padding="10dp"
+    />
+
+    <EditText
+        android:id="@+id/edtUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:padding="10dp"
+        android:layout_below="@+id/txtTitle"
+        android:layout_toRightOf="@+id/txtUser"
+        />
+
+    <EditText
+        android:id="@+id/edtPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:padding="10dp"
+        android:layout_below="@+id/txtUser"
+        android:layout_toRightOf="@+id/txtPass"
+        />
+
+    <CheckBox
+        android:id="@+id/cbSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lưu thông tin"
+        android:textSize="30sp"
+        android:padding="10dp"
+        android:layout_below="@+id/edtPass"
+        android:layout_marginLeft="150dp"
+        />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="Đăng nhập"
+        android:layout_below="@+id/cbSave"
+        android:padding="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="150dp"
+        />
+
+    <Button
+        android:id="@+id/btnExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thoát"
+        android:textSize="30sp"
+        android:layout_below="@+id/btnLogin"
+        android:layout_alignParentRight="true"
+        android:padding="10dp"
+        />
+</RelativeLayout>
+

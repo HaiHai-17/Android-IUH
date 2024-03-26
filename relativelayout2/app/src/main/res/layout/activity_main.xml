@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#4CAF50"
+        android:text="Giải phương trình bậc 2"
+        android:textColor="@color/white"
+        android:paddingLeft="100dp"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/txnhapa"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Nhập a:"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:layout_below="@+id/title"
+        android:layout_marginTop="20dp"
+        android:background="#4CAF50" />
+
+    <TextView
+        android:id="@+id/txnhapb"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Nhập b:"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:layout_below="@+id/txnhapa"
+        android:layout_marginTop="20dp"
+        android:background="#4CAF50" />
+
+    <TextView
+        android:id="@+id/txnhapc"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Nhập c:"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:layout_below="@+id/txnhapb"
+        android:layout_marginTop="20dp"
+        android:background="#4CAF50" />
+
+    <EditText
+        android:id="@+id/edtnhapa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/txnhapa"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        />
+
+    <EditText
+        android:id="@+id/edtnhapb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/txnhapb"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="10dp"
+        android:layout_alignTop="@+id/txnhapa"
+        android:layout_marginTop="30dp"
+        />
+
+    <EditText
+        android:id="@+id/edtnhapc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/txnhapc"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="10dp"
+        android:layout_alignTop="@+id/txnhapb"
+        android:layout_marginTop="30dp"
+        />
+
+    <Button
+        android:id="@+id/btnnext"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txnhapc"
+        android:text="Tiếp tục"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        />
+
+    <Button
+        android:id="@+id/btnketqua"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txnhapc"
+        android:text="Giải PT"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
+        />
+
+    <Button
+        android:id="@+id/btnthoat"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txnhapc"
+        android:text="Thoát"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/txketqua"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#4CAF50"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/btnketqua"
+        />
+</RelativeLayout>

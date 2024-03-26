@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/txtCv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Công việc"
+        android:textSize="20sp"
+        android:paddingLeft="10dp" />
+
+    <TextView
+        android:id="@+id/txtNd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nội dung"
+        android:layout_toRightOf="@+id/txtCv"
+        android:textSize="20sp"
+        android:paddingLeft="10dp" />
+
+    <TextView
+        android:id="@+id/txtDay_List"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ngày"
+        android:textSize="20sp"
+        android:layout_toRightOf="@+id/txtNd"
+        android:paddingLeft="10dp" />
+
+    <TextView
+        android:id="@+id/txtTime_List"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Giờ"
+        android:textSize="20sp"
+        android:layout_toRightOf="@+id/txtDay_List"
+        android:paddingLeft="10dp" />
+
+</RelativeLayout>

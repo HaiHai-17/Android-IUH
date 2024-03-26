@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#4CAF50"
+        android:text="Thông tin cá nhân"
+        android:paddingLeft="110dp"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/txtHoten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Họ và tên: "
+        android:textSize="25sp"
+        android:layout_below="@+id/txtTitle"
+        />
+
+    <EditText
+        android:id="@+id/edtHovaten"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtTitle"
+        android:layout_toRightOf="@+id/txtHoten"
+        />
+
+    <TextView
+        android:id="@+id/txtCMND"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CMND: "
+        android:textSize="25sp"
+        android:layout_below="@+id/edtHovaten"
+        />
+
+    <EditText
+        android:id="@+id/edtCMND"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtHovaten"
+        android:layout_toRightOf="@+id/txtHoten"
+        />
+
+    <TextView
+        android:id="@+id/txtBangcap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtCMND"
+        android:background="#2196F3"
+        android:paddingLeft="150dp"
+        android:text="Bằng cấp"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        />
+
+    <RadioGroup
+        android:id="@+id/rgBangcap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/txtBangcap">
+
+        <RadioButton
+            android:id="@+id/rbtnTrungcap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trung cấp"
+            android:textSize="21sp"
+            android:layout_below="@+id/txtBangcap"
+            />
+
+        <RadioButton
+            android:id="@+id/rbtnCaodang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cao đẳng"
+            android:textSize="21sp"
+            android:layout_below="@+id/txtBangcap"
+            android:layout_toRightOf="@+id/rbtnTrungcap"
+            />
+
+        <RadioButton
+            android:id="@+id/rbtnDaihoc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đại học"
+            android:textSize="21sp"
+            android:layout_below="@+id/txtBangcap"
+            android:layout_toRightOf="@+id/rbtnCaodang"
+            />
+
+    </RadioGroup>
+
+
+
+    <TextView
+        android:id="@+id/txtSothich"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2196F3"
+        android:text="Sở thích"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:paddingLeft="150dp"
+        android:layout_below="@+id/rgBangcap"
+        />
+
+    <CheckBox
+        android:id="@+id/cbDocbao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đọc báo"
+        android:textSize="21sp"
+        android:layout_below="@+id/txtSothich"
+        />
+
+    <CheckBox
+        android:id="@+id/cbDocsach"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đọc sách"
+        android:textSize="21sp"
+        android:layout_below="@+id/txtSothich"
+        android:layout_toRightOf="@+id/cbDocbao"
+        />
+
+    <CheckBox
+        android:id="@+id/cbDoccode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đọc code"
+        android:textSize="21sp"
+        android:layout_below="@+id/txtSothich"
+        android:layout_toRightOf="@+id/cbDocsach"
+        />
+
+    <TextView
+        android:id="@+id/txtBosung"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2196F3"
+        android:text="Thông tin bổ sung"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:layout_below="@+id/cbDocbao"
+        android:paddingLeft="120dp"
+        />
+
+    <TextView
+        android:id="@+id/txtThem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtBosung"
+        android:textSize="25sp"
+        android:text="Lập trình viên\nVận động viên\nGiảng viên"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+
+    <EditText
+        android:id="@+id/edtBosung"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtThem"
+        />
+
+    <Button
+        android:id="@+id/btnGui"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gửi thông tin"
+        android:textSize="25sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="100dp"
+        android:layout_below="@+id/edtBosung"
+        />
+</RelativeLayout>

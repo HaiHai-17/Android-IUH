@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#4CAF50"
+        android:paddingLeft="80dp"
+        android:text="Chuyển đổi năm dương lịch"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textViewDuongLich"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewTitle"
+        android:text="Năm dương lịch: "
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editTextDuongLich"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewTitle"
+        android:layout_toRightOf="@id/textViewDuongLich" />
+
+    <Button
+        android:id="@+id/buttonChuyenDoi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewDuongLich"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:text="Chuyển đổi"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textViewAmLich"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonChuyenDoi"
+        android:layout_marginTop="10dp"
+        android:text="Năm âm lịch: "
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textViewChuyenDoi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/buttonChuyenDoi"
+        android:layout_toRightOf="@id/textViewAmLich"
+        android:background="#FFEB3B" />
+
+</RelativeLayout>
