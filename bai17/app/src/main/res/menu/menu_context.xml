@@ -2,11 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/edit_menu"
-        android:title="Sửa"
-        app:showAsAction="never" />
+        android:id="@+id/menu_edit_context"
+        android:title="Sửa" />
     <item
-        android:id="@+id/clear_menu"
-        android:title="Xoá"
-        app:showAsAction="never" />
+        android:id="@+id/menu_clear_context"
+        android:title="Xoá" />
 </menu>
