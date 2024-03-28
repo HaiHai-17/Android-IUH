@@ -1,10 +1,15 @@
 package com.example.bai17;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.ClipData;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.ContextMenu;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     EditText edtten;
     TextView giatri;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,13 +47,9 @@ public class MainActivity extends AppCompatActivity {
         data.add(new Name("Teo"));
         data.add(new Name("Ty"));
 
-        ArrayList<String> menucontext = new ArrayList<>();
-        menucontext.add("Sửa");
-        menucontext.add("Xoá");
-        ArrayAdapter<String> menuadapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, menucontext);
-        ListView listView = findViewById(R.id.lsView);
-        listView.setAdapter(menuadapter);
-        registerForContextMenu(listView);
+        adapter = new NameAdapter(R.layout.name_layout, MainActivity.this, data);
+        lst.setAdapter(adapter);
+        registerForContextMenu(lst); // Đăng ký Context Menu với ListView thay vì sử dụng ArrayAdapter
 
         nhap.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,10 +68,86 @@ public class MainActivity extends AppCompatActivity {
                 giatri.setText("Vi trí: " + position + " Giá trị: " + data.get(position).getTen());
             }
         });
-
-        adapter = new NameAdapter(R.layout.name_layout, MainActivity.this, data);
-        lst.setAdapter(adapter);
     }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        getMenuInflater().inflate(R.menu.menu_context, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        int position = info.position;
+
+        switch (item.getItemId()) {
+            case R.id.edit_menu:
+                // Thực hiện chức năng chỉnh sửa tên tại vị trí được chọn
+                editName(position);
+                return true;
+            case R.id.clear_menu:
+                // Thực hiện chức năng xoá tên tại vị trí được chọn
+                deleteName(position);
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+        }
+    }
+
+    private void editName(int position) {
+        // Lấy ra tên tại vị trí được chọn
+        Name nameToEdit = data.get(position);
+
+        // Tạo AlertDialog.Builder
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Chỉnh sửa tên");
+
+        // Thiết lập layout cho dialog
+        View viewInflated = LayoutInflater.from(this).inflate(R.layout.dialog_edit_name, null);
+        // Tìm EditText trong layout của dialog
+        final EditText input = viewInflated.findViewById(R.id.editTextName);
+        input.setText(nameToEdit.getTen()); // Đặt giá trị hiện tại của tên vào EditText
+        builder.setView(viewInflated);
+
+        // Thiết lập nút "OK" để xác nhận chỉnh sửa
+        builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Lấy tên mới từ EditText
+                String newName = input.getText().toString();
+                // Cập nhật tên mới vào danh sách
+                data.get(position).setTen(newName);
+                // Cập nhật giao diện
+                adapter.notifyDataSetChanged();
+                // Đóng dialog
+                dialog.dismiss();
+            }
+        });
+
+        // Thiết lập nút "Cancel" để huỷ bỏ chỉnh sửa
+        builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Đóng dialog
+                dialog.cancel();
+            }
+        });
+
+        // Hiển thị dialog
+        builder.show();
+    }
+
+
+    private void deleteName(int position) {
+        // Xoá tên tại vị trí được chọn từ danh sách
+        data.remove(position);
+        // Cập nhật giao diện
+        adapter.notifyDataSetChanged();
+    }
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -88,27 +166,4 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        super.onCreateContextMenu(menu, v, menuInfo);
-        getMenuInflater().inflate(R.menu.menu_context, menu);
-    }
-
-    @Override
-    public boolean onContextItemSelected(MenuItem item) {
-        // Lấy thông tin về mục được chọn trong ListView
-        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-        int position = info.position;
-
-        switch (item.getItemId()) {
-            case R.id.:
-                Toast.makeText(this, "Item 1 selected at position: " + position, Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.clear:
-                Toast.makeText(this, "Item 2 selected at position: " + position, Toast.LENGTH_SHORT).show();
-                return true;
-            default:
-                return super.onContextItemSelected(item);
-        }
-    }
 }

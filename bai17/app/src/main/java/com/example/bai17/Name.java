@@ -4,6 +4,7 @@ public class Name {
 
     String ten;
 
+
     public String getTen() {
         return ten;
     }
