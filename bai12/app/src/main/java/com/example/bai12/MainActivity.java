@@ -84,13 +84,13 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         if(u.equals("admin") && p.equals("123")){
             if (save.isChecked()) {
-                Toast.makeText(MainActivity.this, "Đăng nhập thành công và lưu thông tin!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Đăng nhập thành công, lưu thông tin!", Toast.LENGTH_SHORT).show();
                 editor.putString("1", u);
                 editor.putString("2", p);
                 editor.putInt("3", 1);
             }
             else {
-                Toast.makeText(MainActivity.this, "Đăng nhập thành công và không lưu thông tin!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Đăng nhập thành công, không lưu thông tin!", Toast.LENGTH_SHORT).show();
                 editor.clear();
             }
             editor.commit();
