@@ -1,2 +1,2 @@
-# Project Android Studio in Industrial University of HoChiMinhCity.
+## Project Android Studio in Industrial University of HoChiMinhCity.
 ## Subject: Mobile device programming (Practice)
