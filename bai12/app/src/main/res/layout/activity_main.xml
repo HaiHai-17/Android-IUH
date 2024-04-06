@@ -71,23 +71,23 @@
         android:id="@+id/btnLogin"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:text="Đăng nhập"
         android:layout_below="@+id/cbSave"
-        android:padding="10dp"
         android:layout_alignParentRight="true"
         android:layout_marginLeft="150dp"
-        />
+        android:background="#03A9F4"
+        android:padding="10dp"
+        android:text="Đăng nhập"
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/btnExit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Thoát"
-        android:textSize="30sp"
         android:layout_below="@+id/btnLogin"
         android:layout_alignParentRight="true"
+        android:backgroundTint="#FF5722"
         android:padding="10dp"
-        />
+        android:text="Thoát"
+        android:textSize="30sp" />
 </RelativeLayout>
 
