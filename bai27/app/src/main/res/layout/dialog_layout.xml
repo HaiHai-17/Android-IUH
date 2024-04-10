@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mã Album: "
+        android:layout_marginTop="10dp"
+        android:textSize="25sp"/>
+
+    <TextView
+        android:id="@+id/txt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tên Album: "
+        android:textSize="25sp"
+        android:layout_below="@+id/txt1"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/edtMa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_toRightOf="@+id/txt1"
+        />
+
+    <EditText
+        android:id="@+id/edtTen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_below="@+id/txt1"
+        android:layout_toRightOf="@+id/txt2"/>
+
+</RelativeLayout>

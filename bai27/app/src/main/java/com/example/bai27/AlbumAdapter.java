@@ -1,4 +1,4 @@
-package com.example.sqlite;
+package com.example.bai27;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,27 +6,30 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
 import java.util.ArrayList;
 
-public class SinhvienAdapter extends BaseAdapter {
-    private Context context;
-    private int layout;
-    private ArrayList<Sinhvien> data;
+public class AlbumAdapter extends BaseAdapter {
 
-    public SinhvienAdapter(Context context, int layout, ArrayList<Sinhvien> data) {
+    Context context;
+    int layout;
+    ArrayList<Album> dataAlbum;
+
+    public AlbumAdapter(Context context, int layout, ArrayList<Album> dataAlbum) {
         this.context = context;
         this.layout = layout;
-        this.data = data;
+        this.dataAlbum = dataAlbum;
     }
+
 
     @Override
     public int getCount() {
-        return data.size();
+        return dataAlbum.size();
     }
 
     @Override
-    public Sinhvien getItem(int position) {
-        return data.get(position);
+    public Object getItem(int position) {
+        return dataAlbum.get(position);
     }
 
     @Override
@@ -41,22 +44,25 @@ public class SinhvienAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(context).inflate(layout, parent, false);
             holder = new ViewHolder();
             holder.idTextView = convertView.findViewById(R.id.txtId);
+            holder.maTextView = convertView.findViewById(R.id.txtMaAlbum);
             holder.nameTextView = convertView.findViewById(R.id.txtName);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        Sinhvien sv = data.get(position);
-        holder.idTextView.setText(String.valueOf(sv.getId()));
-        holder.nameTextView.setText(sv.getName());
+        Album album = dataAlbum.get(position);
+        holder.idTextView.setText(String.valueOf(album.getStt()));
+        holder.maTextView.setText(album.getMa());
+        holder.nameTextView.setText(album.getTen());
 
         return convertView;
     }
 
     private static class ViewHolder {
         TextView idTextView;
+        TextView maTextView;
         TextView nameTextView;
+
     }
 }
-
