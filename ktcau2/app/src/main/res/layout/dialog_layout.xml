@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtMaNv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Mã nhân viên: "
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/txtTenNv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtMaNv"
+        android:layout_marginTop="20dp"
+        android:text="Tên nhân viên: "
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/txtTuoiNv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtTenNv"
+        android:layout_marginTop="20dp"
+        android:text="Tuổi nhân viên: "
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/edtMaNv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_toRightOf="@+id/txtMaNv"
+        />
+
+    <EditText
+        android:id="@+id/edtTenNv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_toRightOf="@+id/txtTenNv"
+        android:layout_below="@+id/edtMaNv"
+        />
+
+    <EditText
+        android:id="@+id/edtTuoiNv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_toRightOf="@+id/txtTuoiNv"
+        android:layout_below="@+id/edtTenNv"
+        />
+
+</RelativeLayout>
