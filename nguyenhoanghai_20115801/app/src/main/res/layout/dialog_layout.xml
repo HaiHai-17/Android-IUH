@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mã NV: "
+        android:layout_marginTop="10dp"
+        android:textSize="25sp"/>
+
+    <TextView
+        android:id="@+id/txt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tên NV: "
+        android:textSize="25sp"
+        android:layout_below="@+id/txt1"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/txt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lương: "
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/txt2"
+        android:textSize="25sp"/>
+
+    <TextView
+        android:id="@+id/txt4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chức vụ: "
+        android:textSize="25sp"
+        android:layout_below="@+id/txt3"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/edtMa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_toRightOf="@+id/txt1"
+        />
+
+    <EditText
+        android:id="@+id/edtTen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_below="@+id/txt1"
+        android:layout_toRightOf="@+id/txt2"/>
+
+    <EditText
+        android:id="@+id/edtLuong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_toRightOf="@+id/txt3"
+        android:layout_below="@+id/edtTen"
+        />
+
+    <EditText
+        android:id="@+id/edtChucvu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_below="@+id/edtLuong"
+        android:layout_toRightOf="@+id/txt4"/>
+
+</RelativeLayout>
